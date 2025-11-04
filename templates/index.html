@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}Kauppalistasovellus{% endblock %}
+{% block content %}
+  <div class="content">
+    {% for message in get_flashed_messages() %}
+    <b class="info">{{ message }}</b>
+    {% endfor %}  
+    <form action="/login" method="post">
+      <p>
+        Tunnus: <br />
+        <input type="text" name="username" />
+      </p>
+      <p>
+        Salasana: <br />
+        <input type="password" name="password" />
+      </p>
+      <input type="submit" value="Kirjaudu" />
+    </form>
+    <p>
+      {% for osoite in osoitteet %}
+      <div>{{ osoite }}</div>
+      {% endfor %}
+    </p>
+  </div>
+{% endblock %}
