@@ -9,7 +9,7 @@ from sqlalchemy.sql import text
 
 app = Flask(__name__)
 app.secret_key = config.secret_key
-app.config["SQLALCHEMY_DATABASE_URI"] = config.database_uri
+app.config["SQLALCHEMY_DATABASE_URI"] = database_uri
 db = SQLAlchemy(app)
 
 def require_login():
